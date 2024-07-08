@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
+
+public partial class Admin_AddItem : System.Web.UI.Page
+{
+    DataClassesDataContex db = new DataClassesDataContex();
+    public string constr;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        constr = ConfigurationManager.ConnectionStrings["MD"].ConnectionString;
+    }
+    protected void Button9_Click(object sender, EventArgs e)
+    {
+        SqlConnection con = new SqlConnection();
+        FileUpload1.SaveAs(Server.MapPath("~/Uploaded_Image/") +FileUpload1.FileName);
+        FileUpload1.SaveAs(Server.MapPath("~/Uploaded_Image") + FileUpload1.FileName);
+        FileUpload1.SaveAs(Server.MapPath("~/Uploaded_Image") + FileUpload1.FileName);
+        //int inst=db.Insert(txtiname.Text,txtdescrip.Text,Convert.ToDouble(txtprice.Text),"~/Uploaded_Image/" +FileUpload1.FileName,Convert.ToInt32(txtquan.Text),DropDownList1.SelectedItem.Text,"~/Uploaded_Image/"+FileUpload2.FileName,"~/Uploaded_Image/"+FileUpload3.FileName,Convert.ToInt32(DropDownList2.SelectedItem.Text));
+        SqlCommand cmd = new SqlCommand();
+    }
+}

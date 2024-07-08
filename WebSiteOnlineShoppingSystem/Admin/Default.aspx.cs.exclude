@@ -1,0 +1,83 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+
+public partial class Admin_Default : System.Web.UI.Page
+{
+    public SqlConnection con;
+    public string qstr, constr;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        constr = ConfigurationManager.ConnectionStrings["MD"].ConnectionString;
+        ShowData();
+    }
+    protected void btnSubmit_Click(object sender, EventArgs e)
+    {
+        //string str = "Select top 1 CityCode From City where CityCode='" + TextBox1.Text + "'";
+        con = new SqlConnection(constr);
+        SqlCommand obj = new SqlCommand("Select top 1 CityCode From City where CityCode='" + TextBox1.Text + "'", con);
+        con.Open();
+        SqlDataAdapter da = new SqlDataAdapter(obj);
+        DataSet ds = new DataSet();
+        DataTable dt = new DataTable();
+        da.Fill(dt);
+
+
+
+
+        if (dt.Rows.Count>0)
+        {
+
+
+        }
+        else
+        {
+          SaveData();
+        }
+
+    }
+    private void SaveData()
+    {
+        con = new SqlConnection(constr);
+        qstr = "insert into dbo.City (CityCode,CityName,City)values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "')";
+        SqlCommand cmd = new SqlCommand(qstr, con);
+        con.Open();
+        cmd.ExecuteNonQuery();
+        con.Close();
+    }
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+    private void ShowData()
+    {
+        con = new SqlConnection(constr);
+        con.Open();
+        SqlDataAdapter br = new SqlDataAdapter("select * from City ", con);
+        DataTable dt = new DataTable();
+        br.Fill(dt);
+
+        GridView1.DataSource = dt;
+        GridView1.DataBind();
+        con.Close();
+
+
+    }
+    private void diplay()
+    {
+
+
+    }
+
+    protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
+    {
+
+
+    }
+}

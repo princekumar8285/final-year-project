@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DataClassesDataContex">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQEIIAAUACAAAAAZBQAEiRAAAQAAAAAAAAACMBAABBA=</HashCode>
+      <FileName>App_Code\DataClassesDataContex.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_adapter" />
+      <Field Name="_reader" />
+      <Field Name="ds" />
+      <Field Name="_sqlParameter" />
+      <Field Name="con" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="System.Data.SqlClient.SqlDataAdapter">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Data.SqlClient.SqlDataReader">
+    <Position X="4.75" Y="2" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Data.SqlClient.SqlParameter">
+    <Position X="6.5" Y="1" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Data.SqlClient.SqlConnection">
+    <Position X="8" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Data.DataSet">
+    <Position X="9.75" Y="1" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="UserMaster.master.cs" Inherits="UserPanel_UserMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+     <link href="../css/style.css" rel="stylesheet" />
+    <link href="../css/jquery.bxslider.css" rel="stylesheet" />
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/jquery.bxslider.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.bxslider').bxSlider({
+                auto: true,
+                autoControls: true,
+                stopAutoOnClick: true,
+                pager: true,
+                slideWidth: "1800"
+            });
+        });
+  </script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    </head>
+    <body>
+        <form runat="server">
+
+         <!-- Header Section -->
+    <header>
+        <img src="../Uploaded_Image/Logo.png" height="100px" width="300px"/>
+        <nav>
+             
+            <ul>               
+                  <li><a href="MyAccount.aspx">MyAccount</a></li>
+                  <li><a href="MyOrder.aspx">MyOrder</a></li>
+                  <%--<li><a href="MyCart.aspx">Cart</a></li>--%>
+                  <li><a href="ChangePassword.aspx">ChangePassword</a></li>
+                <li><a href="../ShowShopDetails.aspx">Shopping</a></li>
+                <li>
+                    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Logout</asp:LinkButton></li>
+          </ul>
+        </nav>
+                <div class="search_container">Welcome To: <asp:Label ID="Label1" runat="server" Text="Guest"></asp:Label></div>
+
+    </header>
+
+    
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            
+        </asp:ContentPlaceHolder>
+    
+
+        <!-- #END-->
+
+        <!-- Footer Section-->
+        <footer>
+
+          <table width="100%" text-color="white">
+                    <tr>
+                        <td><a href="Home.aspx" target="_top">Home</a></td>
+                       <td><a href="About.aspx" target="_top">AboutUs</a></td>
+                      <td><a href="ContactUs.aspx" target="_top">ContactUs</a></td>
+                        <td><a href="Register.aspx" target="_top">Registration</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="Login.aspx" target="_top">Login</a></td>
+                        <td><a href="UserPanel/UserHome.aspx" target="_top">UserHome</a></td>
+                        <td><a href="https://www.google.co.in" target="_top">Google</a></td>
+                        <td><a href="https://www.facebook.com/" target="_top">Facebook</a></td>
+
+                    </tr>
+                </table>
+            <p height="20%" align="center" text="white">&copy Right All Right Reserved 2018...</p>
+        <ul align="left" text="center">
+            <li>Support.</li>
+            <li>Feedback.</li>
+            <li>Delivery</li>
+        </ul>
+        </footer>
+
+ </form>
+</body>
+</html>
